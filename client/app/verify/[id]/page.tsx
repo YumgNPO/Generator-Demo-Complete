@@ -13,7 +13,7 @@ export default function VerificationPage() {
     // Fetch the certificate data from your mock server using the ID in the URL
     const fetchCertificate = async () => {
       try {
-        const response = await fetch(`https://generator-demo-complete-backend.onrender.com/api/certificates/${params.id}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/certificates/${params.id}`);
         if (!response.ok) {
           throw new Error('Certificate not found or invalid.');
         }
