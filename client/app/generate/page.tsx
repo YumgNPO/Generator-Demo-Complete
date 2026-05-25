@@ -73,28 +73,28 @@ export default function GenerateCertificate() {
       const firstPage = pages[0];
       const secondPage = pages[1];
 
-      const textSize = 10;
-      const textsize1 = 8;
-      const textsize2 = 6
+      const textSize = 9;
+      const textSize1 = 8;
+      const textSize2 = 6;
       const textColor = rgb(0, 0, 0);
 
       // ==========================================
       // PAGE 1 STAMPING
       // ==========================================
-      const page1X = 230; 
+      const page1X = 250; 
       firstPage.drawText(formData.certificateNumber, { x: page1X, y: 628, size: textSize, color: textColor });
       firstPage.drawText(formData.equipmentOwner, { x: page1X, y: 605, size: textSize, color: textColor });
-      firstPage.drawText(formData.equipmentName, { x: page1X, y: 570, size: textSize, color: textColor });
-      firstPage.drawText(formData.manufacturer, { x: page1X, y: 540, size: textSize, color: textColor });
-      firstPage.drawText(formData.serialNumber, { x: page1X, y: 510, size: textSize, color: textColor });
-      firstPage.drawText(formData.assetNo, { x: page1X, y: 480, size: textSize, color: textColor }); 
-      firstPage.drawText(formData.ambientTemp, { x: page1X, y: 450, size: textSize, color: textColor });
-      firstPage.drawText(formData.calibrationDate, { x: page1X, y: 420, size: textSize, color: textColor });
-      firstPage.drawText(formData.nextDueDate, { x: page1X, y: 390, size: textSize, color: textColor });
-      firstPage.drawText(formData.location, { x: page1X, y: 360, size: textSize, color: textColor });
+      firstPage.drawText(formData.equipmentName, { x: page1X, y: 581, size: textSize, color: textColor });
+      firstPage.drawText(formData.manufacturer, { x: page1X, y: 556, size: textSize, color: textColor });
+      firstPage.drawText(formData.serialNumber, { x: page1X, y: 533, size: textSize, color: textColor });
+      firstPage.drawText(formData.assetNo, { x: page1X, y: 508, size: textSize, color: textColor }); 
+      firstPage.drawText(formData.ambientTemp, { x: page1X, y: 484, size: textSize, color: textColor });
+      firstPage.drawText(formData.calibrationDate, { x: page1X, y: 459, size: textSize, color: textColor });
+      firstPage.drawText(formData.nextDueDate, { x: page1X, y: 435, size: textSize, color: textColor });
+      firstPage.drawText(formData.location, { x: page1X, y: 410, size: textSize, color: textColor });
       
       // Page 1 Remark Blank
-      firstPage.drawText(formData.equipmentName, { x: 260, y: 135, size: textSize, color: textColor }); 
+      firstPage.drawText(formData.equipmentName, { x: 335, y: 155, size: 7.7, color: textColor }); 
 
       // Page 1 QR Code
       const qrImageBytes = await fetch(qrImage).then(res => res.arrayBuffer());
@@ -107,50 +107,50 @@ export default function GenerateCertificate() {
       });
 
       // Page 1 Standard Instrument Table
-      const p1TableY = 180;
-      firstPage.drawText(formData.refDescription, { x: 70, y: p1TableY, size: textSize, color: textColor });
-      firstPage.drawText(formData.refModel, { x: 220, y: p1TableY, size: textSize, color: textColor });
-      firstPage.drawText(formData.refSerialNo, { x: 300, y: p1TableY, size: textSize, color: textColor });
+      const p1TableY = 230;
+      firstPage.drawText(formData.refDescription, { x: 119, y: p1TableY, size: textSize, color: textColor });
+      firstPage.drawText(formData.refModel, { x: 258, y: p1TableY, size: textSize, color: textColor });
+      firstPage.drawText(formData.refSerialNo, { x: 318, y: p1TableY, size: textSize, color: textColor });
       firstPage.drawText(formData.refCalDate, { x: 400, y: p1TableY, size: textSize, color: textColor });
-      firstPage.drawText(formData.refNextDue, { x: 480, y: p1TableY, size: textSize, color: textColor });
+      firstPage.drawText(formData.refNextDue, { x: 485, y: p1TableY, size: textSize, color: textColor });
 
       // ==========================================
       // PAGE 2 STAMPING
       // ==========================================
-      secondPage.drawText(formData.certificateNumber, { x: 230, y: 580, size: textSize, color: textColor });
-      secondPage.drawText(formData.equipmentOwner, { x: 230, y: 560, size: textSize, color: textColor });
-      secondPage.drawText(formData.serviceRequest, { x: 230, y: 540, size: textSize, color: textColor }); 
+      secondPage.drawText(formData.certificateNumber, { x: 230, y: 615, size: textSize, color: textColor });
+      secondPage.drawText(formData.equipmentOwner, { x: 230, y: 593, size: textSize, color: textColor });
+      secondPage.drawText(formData.serviceRequest, { x: 230, y: 580, size: textSize, color: textColor }); 
       
       // Left Info Column
-      const p2LeftX = 180;
-      secondPage.drawText(formData.equipmentName, { x: p2LeftX, y: 505, size: textSize, color: textColor });
-      secondPage.drawText(formData.manufacturer, { x: p2LeftX, y: 485, size: textSize, color: textColor });
-      secondPage.drawText(formData.serialNumber, { x: p2LeftX, y: 465, size: textSize, color: textColor });
-      secondPage.drawText(formData.assetNo, { x: p2LeftX, y: 445, size: textSize, color: textColor });
-      secondPage.drawText(formData.range, { x: p2LeftX, y: 425, size: textSize, color: textColor });
-      secondPage.drawText(formData.refDescription, { x: 220, y: 395, size: textSize, color: textColor }); 
+      const p2LeftX = 135;
+      secondPage.drawText(formData.equipmentName, { x: p2LeftX, y: 551, size: textSize1, color: textColor });
+      secondPage.drawText(formData.manufacturer, { x: p2LeftX, y: 540, size: textSize1, color: textColor });
+      secondPage.drawText(formData.serialNumber, { x: p2LeftX, y: 527, size: textSize1, color: textColor });
+      secondPage.drawText(formData.assetNo, { x: p2LeftX, y: 516, size: textSize1, color: textColor });
+      secondPage.drawText(formData.range, { x: p2LeftX, y: 504, size: textSize1, color: textColor });
+      secondPage.drawText(formData.refDescription, { x: 220, y: 478, size: textSize, color: textColor }); 
 
       // Right Info Column
-      const p2RightX = 420;
-      secondPage.drawText(formData.ambientTemp, { x: p2RightX, y: 485, size: textSize, color: textColor });
-      secondPage.drawText(formData.calibrationDate, { x: p2RightX, y: 465, size: textSize, color: textColor });
-      secondPage.drawText(formData.nextDueDate, { x: p2RightX, y: 445, size: textSize, color: textColor });
+      const p2RightX = 475;
+      secondPage.drawText(formData.ambientTemp, { x: 325, y: 551, size: textSize, color: textColor });
+      secondPage.drawText(formData.calibrationDate, { x: p2RightX, y: 551, size: textSize, color: textColor });
+      secondPage.drawText(formData.nextDueDate, { x: p2RightX, y: 540, size: textSize, color: textColor });
 
       // Page 2 Physical Inspection Table
-      const p2PhysTableY = 320;
-      secondPage.drawText(formData.display, { x: 100, y: p2PhysTableY, size: textSize, color: textColor }); 
-      secondPage.drawText(formData.flangeIntegrity, { x: 280, y: p2PhysTableY, size: textSize, color: textColor }); 
+      const p2PhysTableY = 437;
+      secondPage.drawText(formData.display, { x: 80, y: p2PhysTableY, size: textSize, color: textColor }); 
+      secondPage.drawText(formData.flangeIntegrity, { x: 180, y: p2PhysTableY, size: textSize, color: textColor }); 
 
       // Page 2 Calibration Data Table
-      const p2CalTableY = 230;
-      secondPage.drawText(formData.psvType, { x: 70, y: p2CalTableY, size: textSize, color: textColor }); 
+      const p2CalTableY = 377;
+      secondPage.drawText(formData.psvType, { x: 50, y: p2CalTableY, size: textSize, color: textColor }); 
       secondPage.drawText(formData.serialNumber, { x: 180, y: p2CalTableY, size: textSize, color: textColor });
       secondPage.drawText(formData.range, { x: 290, y: p2CalTableY, size: textSize, color: textColor });
       secondPage.drawText(formData.setPressure, { x: 390, y: p2CalTableY, size: textSize, color: textColor });
       secondPage.drawText(formData.remark, { x: 480, y: p2CalTableY, size: textSize, color: textColor });
 
       // Page 2 Bottom Dates
-      const signatureY = 155; 
+      const signatureY = 180; 
       secondPage.drawText(formData.calibrationDate, { x: 230, y: signatureY, size: textSize, color: textColor }); 
       secondPage.drawText(formData.calibrationDate, { x: 450, y: signatureY, size: textSize, color: textColor }); 
 
