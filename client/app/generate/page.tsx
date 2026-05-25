@@ -62,7 +62,7 @@ export default function GenerateCertificate() {
       const certificateId = dbData.id;
 
       // 2. Generate QR Code
-      const verificationUrl = `https://generator-demo-complete.vercel.app/verify/${certificateId}`;
+      const verificationUrl = `https://generator-demo-complete-bdkf.vercel.app/verify/${certificateId}`;
       const qrImage = await QRCode.toDataURL(verificationUrl);
       
       // 3. Load Blank Template
