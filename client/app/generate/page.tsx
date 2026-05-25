@@ -51,7 +51,7 @@ export default function GenerateCertificate() {
 
     try {
       // 1. Send data to backend
-      const response = await fetch('http://localhost:5000/api/certificates', {
+      const response = await fetch('https://generator-demo-complete-backend.onrender.com/api/certificates', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -62,7 +62,7 @@ export default function GenerateCertificate() {
       const certificateId = dbData.id;
 
       // 2. Generate QR Code
-      const verificationUrl = `http://localhost:3000/verify/${certificateId}`;
+      const verificationUrl = `https://generator-demo-complete.vercel.app/verify/${certificateId}`;
       const qrImage = await QRCode.toDataURL(verificationUrl);
       
       // 3. Load Blank Template
